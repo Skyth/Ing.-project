@@ -26,7 +26,7 @@ export default Base.extend({
         Ember.run(function() {
           resolve({ token: response.token });
         });
-      }, function(xhr, status, error) {
+      }, function(xhr) {
         var response = JSON.parse(xhr.responseText);
         Ember.run(function() {
           reject(response.error);
