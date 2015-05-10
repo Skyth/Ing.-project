@@ -1,6 +1,7 @@
-export default ApplicationAdapter.extend({
+import DRFAdapter from 'ember-django-adapter/adapters/drf';
 
-buildURL: function (type, id, record) {
-return '/companies/' + record.get('company.id') + '/products/' + id;
-}
+export default DRFAdapter.extend({
+  buildURL: function (type, id, record) {
+    return '/companies/' + record.get('company.id') + '/products/' + id;
+  }
 });

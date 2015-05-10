@@ -7,8 +7,9 @@ export default Ember.Route.extend({
 	resetController: function(controller) {
 		var users = controller.get('model');
 		users.forEach(function(user){
-			if (user.get('isDirty'))
+			if (user.get('isDirty')){
 				user.rollback();
+			}
 		});
 	},
 	actions: {
