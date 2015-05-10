@@ -1,0 +1,9 @@
+{{#if isEditing}}
+	<form {{action "toggleEditing" on="submit"}}>
+  		{{yield}}
+	</form>
+{{else}}
+	<span {{action "toggleEditing"}}>
+  		{{value}}
+	</span>
+{{/if}}

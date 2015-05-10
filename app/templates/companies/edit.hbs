@@ -1,0 +1,66 @@
+<form class="form-vertical">
+	<div class="form-group">
+		<label for="exampleInputName2">Title</label>
+    	<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.title placeholder="123"}}
+    	</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputName2">Address</label>
+    	<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.address placeholder="123"}}
+    	</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputName2">Ogrn</label>
+    	<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.ogrn placeholder="123"}}
+   		</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputName2">Inn</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.inn placeholder="123"}}
+    	</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputName2">Kpp</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.kpp placeholder="123"}}
+    	</div>
+	</div>	
+	<div class="form-group">
+		<label for="exampleInputName2">Payment account</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.paymentAccount placeholder="123"}}
+    	</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputName2">Correctional account</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.correctionalAccount placeholder="123"}}
+    	</div>
+	</div>	
+	<div class="form-group">
+		<label for="exampleInputName2">Bank name</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.bankName placeholder="123"}}
+    	</div>
+	</div>	
+	<div class="form-group">
+		<label for="exampleInputName2">Bank bik</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.bankBik placeholder="123"}}
+    	</div>
+	</div>
+</form>	
+<div class="btn-group-gorizontal" role="group" aria-label="...">
+    <div class="col-sm-offset-4 col-sm-10">
+      <button type="submit" class="btn btn-default" {{action 'edit_save'}}>Submit</button>
+    </div>
+    <div class="col-sm-offset-4 col-sm-10">
+      <button type="cancel" class="btn btn-default" {{action 'edit_cancel'}}>Cancel</button>
+    </div> 
+</div>	
+	
+{{outlet}}

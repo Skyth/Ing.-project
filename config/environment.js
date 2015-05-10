@@ -19,6 +19,12 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    authorizer: 'authorizer:custom',
+    crossOriginWhitelist: ['http://admin.ingida.ru'],
+     routeAfterAuthentication: '/companies'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

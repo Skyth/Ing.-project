@@ -6,4 +6,16 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
+  //this.route('companies', { path: '/companies' });
+  this.route('login');
+  this.resource('companies', function() {
+    this.route('show', { path: ':company_id' }, function(){
+        this.resource('products', function(){});
+    });
+    this.route('new');
+    this.route('edit', { path: ':company_id/edit' });
+  });
+  this.resource('users', function(){
+    this.route('show', {path: ':user_id'}, function(){});
+  });
 });

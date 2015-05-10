@@ -1,0 +1,55 @@
+<div class="company">
+	
+</div>
+<div class="col-md-4">
+</div>	
+<div class="col-sm-10">
+<table class="table table-bordered">
+	<thead>
+		<th>Field</th>
+		<th>Description</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Title</td>
+			<td>{{model.title}}</td>	
+		</tr>	
+		<tr>
+			<td>Address</td>
+			<td>{{model.address}}</td>
+		</tr>
+		<tr>
+			<td>Ogrn</td>
+			<td>{{model.ogrn}}</td>
+		</tr>
+		<tr>
+			<td>Inn</td>
+			<td>{{model.inn}}</td>
+		</tr>
+		<tr>
+			<td>Kpp</td>
+			<td>{{model.kpp}}</td>
+		</tr>
+		<tr>
+			<td>Payment account</td>
+			<td>{{model.paymentAccount}}</td>
+		</tr>
+		<tr>
+			<td>Correctional account</td>
+			<td>{{model.correctionalAccount}}</td>
+		</tr>
+		<tr>
+			<td>Bank name</td>
+			<td>{{model.bankName}}</td>
+		</tr>
+		<tr>
+			<td>Bank bik</td>
+			<td>{{model.bankBik}}</td>
+		</tr>				
+	</tbody>
+</table>	
+</div>
+{{#link-to 'companies.edit' model}}<button class="btn btn-default" type="submit">Edit</button>{{/link-to}}
+<div class="product-container">	
+{{outlet}}
+</div>
