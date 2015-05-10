@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 		'model.correctionalAccount',
 		'model.bankName',
 		'model.bankBik',
-		function(){
+		function () {
 			return !Ember.isEmpty(this.get('model.title')) &&
 			!Ember.isEmpty(this.get('model.address')) &&
 			!Ember.isEmpty(this.get('model.ogrn')) &&
@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 		}
 		),
 	actions:{
-		edit_save: function(){
+		edit_save: function () {
 			if (this.get('isValid')) {
 				var _this = this;
 				this.get('model').save().then(function(company){
@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
 			}
 		return false;	
 		},
-		edit_cancel: function(){
+		edit_cancel: function () {
 			this.transitionToRoute('companies.show', this.get('model'));
 			return false;
 		}
