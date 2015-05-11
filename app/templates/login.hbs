@@ -7,16 +7,14 @@
   <div class="panel-body">
 	<form class="form-vertical">		
     	<div class="form-group1">
-		<label for="exampleInputName">Username</label>
     	<div class="col-sm-0">
-   			{{input type="text" class="identification" value=identification placeholder="Login"}}
+   			{{input type="text" class="identification" value=identification placeholder="Login" required='required'}}
     	</div>
     	</div>
 
     	<div class="form-group">
-		<label for="exampleInputName2">Password</label>
-    	<div class="col-sm-0">
-    	{{input type="password" class="password" value=password placeholder="Password"}}
+    	<div class="col-sm-0 passField">
+    	{{input type="password" class="password" value=password placeholder="Password" required='required'}}
     	</div>
 		</div>
 		<button type="submit" class="btn btn-default" {{action 'authenticate'}}>Log in</button>

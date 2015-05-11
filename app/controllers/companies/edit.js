@@ -28,8 +28,6 @@ export default Ember.Controller.extend({
 				this.get('model').save().then(function(company){
 					_this.transitionToRoute('companies.show',company);
 				});
-			} else {
-				this.get('errorMessage', 'You have to fill all the fields');
 			}
 		return false;	
 		},

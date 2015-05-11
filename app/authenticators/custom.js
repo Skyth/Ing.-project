@@ -15,32 +15,32 @@ export default Base.extend({
 	},
 
 	authenticate: function (credentials) {
-	var _this = this;
-	return new Ember.RSVP.Promise(function(resolve, reject) {
-		Ember.$.ajax({
-		url:         _this.tokenEndpoint,
-		type:        'POST',
-		data:        JSON.stringify({ username: credentials.identification, password: credentials.password }),
-		contentType: 'application/json'
-		}).then(function (response) {
-		Ember.run(function () {
-			resolve({ token: response.token });
+		var _this = this;
+		return new Ember.RSVP.Promise(function(resolve, reject) {
+			Ember.$.ajax({
+			url:         _this.tokenEndpoint,
+			type:        'POST',
+			data:        JSON.stringify({ username: credentials.identification, password: credentials.password }),
+			contentType: 'application/json'
+			}).then(function (response) {
+			Ember.run(function () {
+				resolve({ token: response.token });
+			});
+			}, function (xhr) {
+			var response = JSON.parse(xhr.responseText);
+			Ember.run(function () {
+				reject(response.error);
+			});
+			});
 		});
-		}, function  (xhr) {
-		var response = JSON.parse(xhr.responseText);
-		Ember.run(function() {
-			reject(response.error);
-		});
-		});
-	});
 	},
 
 	invalidate: function () {
-	var _this = this;
-	return new Ember.RSVP.Promise(function (resolve) {
-		Ember.$.ajax({ url: _this.tokenEndpoint, type: 'DELETE' }).always(function () {
-		resolve();
+		var _this = this;
+		return new Ember.RSVP.Promise(function (resolve) {
+			Ember.$.ajax({ url: _this.tokenEndpoint, type: 'DELETE' }).always (function () {
+			resolve();
+			});
 		});
-	});
-	},
+		},
 });
