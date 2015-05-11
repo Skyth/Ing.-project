@@ -16,7 +16,11 @@
     		 
     		<li>{{#link-to 'companies' }}Companies{{/link-to}}</li>
     		<li>{{#link-to 'users'}}Users{{/link-to}}</li>
-        <li>{{#link-to 'login'}}Log{{/link-to}}</li>
+        <li>{{#if session.isAuthenticated}}
+            <a {{ action 'invalidateSession' }}>Sign out</a>
+          {{else}}
+            {{#link-to 'login'}}Sign in{{/link-to}}
+          {{/if}}</li>
 		</ul>
     </div>	
   </div>
