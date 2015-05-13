@@ -13,16 +13,17 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-    		 
-    		<li>{{#link-to 'companies' }}Companies{{/link-to}}</li>
-
-    		<li>{{#link-to 'users'}}Users{{/link-to}}</li>
-        <li>{{#if session.isAuthenticated}}
+    		 {{#if session.isAuthenticated}}
+        <li>{{#link-to 'companies' }}{{ userName }}{{/link-to}}</li>
+        {{#if isAdmin}}
+    		<li>
+          {{#link-to 'users'}}Users{{/link-to}}</li>
+        {{/if}}
+        <li>
             <a {{ action 'invalidateSession' }}>Sign out</a>
-          {{else}}
-            {{#link-to 'login'}}Sign in{{/link-to}}
-          {{/if}}</li>
-        <li>{{ userName }}</li>  
+          </li>
+          {{else}}<li>
+            {{#link-to 'login'}}Sign in{{/link-to}}</li>{{/if}}
 		</ul>
     </div>	
   </div>

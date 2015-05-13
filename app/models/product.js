@@ -6,5 +6,5 @@ export default DS.Model.extend({
   	manufacturer: DS.attr('string'),
   	form_factor: DS.attr('string'),
   	material: DS.attr('string'),
-  	volume: DS.attr('integer')
+  	volume: DS.attr('string')
 });
