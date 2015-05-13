@@ -1,12 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-actions: {
+  temp: false,
+  actions: {
     goToLink: function (company) {
       this.transitionToRoute('products', company); 
     },
-    delete: function (company) {
-      company.destroyRecord();
+    confirm: function (company) {
+      this.set('temp', company)
+      this.set('isConfirmVisible',true);
+    },
+    proceed: function () {
+      this.get('temp').destroyRecord();
       return false; 
     },
   }

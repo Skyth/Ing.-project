@@ -1,9 +1,31 @@
-<div class="col-md-4">
-	<ul class="list-unstyled">
-	{{#each product in model}}
-		<li>
-			{{product.title}}
-		</li>
-	{{/each}}
-	</ul>
+<div class="col-sm-10">
+  <div class="panel panel-default">
+    <div class="panel-heading">Список товаров</div>
+    <table class="table">
+      <thead>
+        <tr>
+        	<th></th>
+          <th>Id</th>
+          <th>Название товара</th>
+          <th>Производитель</th>
+          <th>Упаковка</th>
+          <th>Материал упаковки</th>
+          <th>Объем</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each product in model}}
+        <tr class='tableLine'>
+        	<td><img src={{product.image}}></td>
+          <td>{{product.id}}</td>
+          <td>{{product.title}}</td>
+          <td>{{product.manufacturer}}</td>
+          <td>{{product.form_factor}}</td>
+          <td>{{product.material}}</td>
+          <td>{{product.volume}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>

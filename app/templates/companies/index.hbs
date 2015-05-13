@@ -1,3 +1,9 @@
+{{#if isConfirmVisible}}
+  {{confirm-modal isVisible=isConfirmVisible 
+    confirmationMsg="Вы уверены, что хотите удалить компанию?" title="Подтверждение" 
+    confirmType="delete" proceed="proceed"}}
+{{/if}}
+
 <div class="col-sm-10">
   <div class="panel panel-default">
     <div class="panel-heading">Список компаний</div>
@@ -14,7 +20,7 @@
         <tr class='tableLine'>
           <td {{action "goToLink" company}}>{{company.id}}</td>
           <td {{action "goToLink" company}}>{{company.title}}</td>
-          <td class='deleteButton'><i class='glyphicon glyphicon-remove-circle' {{action "delete" company}}></i></td>
+          <td class='deleteButton'><i class='glyphicon glyphicon-remove-circle' {{action "confirm" company}}></i></td>
         </tr>
         {{/each}}
       </tbody>
