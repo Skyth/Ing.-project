@@ -8,32 +8,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ingida</a>
+      <a class="navbar-brand">Ingida</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
     		 {{#if session.isAuthenticated}}
         <li>{{#link-to 'companies' }}{{ userName }}{{/link-to}}</li>
-        {{#if isAdmin}}
-    		<li>
-          {{#link-to 'users'}}Пользователи{{/link-to}}</li>
-        {{/if}}
-        <li>
-            <a class='navbar-right' {{ action 'invalidateSession' }}>Выйти</a>
-          </li>
+        {{#if isAdmin}}<li>
+          {{#link-to 'users'}}Пользователи{{/link-to}}</li>{{/if}}
         {{/if}}
 		</ul>
     <ul class="nav navbar-nav navbar-right">
          {{#if session.isAuthenticated}}
-        <li>{{#link-to 'companies' }}{{ userName }}{{/link-to}}</li>
-        {{#if isAdmin}}
         <li>
-          {{#link-to 'users'}}Пользователи{{/link-to}}</li>
-        {{/if}}
-        <li>
-            <a class='navbar-right' {{ action 'invalidateSession' }}>Выйти</a>
-          </li>
+          <a class='navbar-right' {{ action 'invalidateSession' }}>Выйти</a>
+        </li>
         {{/if}}
     </ul>
     </div>	
