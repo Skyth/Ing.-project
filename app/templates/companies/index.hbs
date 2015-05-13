@@ -1,22 +1,25 @@
 <div class="col-sm-10">
-<table class="table table-bordered">
-	<thead>
-      <tr>
-        <th>Id</th>
-        <th>Link</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each company in model}}
-      <tr>
-      	<td>{{company.id}}</td>
-      	<td>{{#link-to "products" company}}Show{{/link-to}}</td>
-      	<td>Delete</td>
-      </tr>
-      {{/each}}
+  <div class="panel panel-default">
+    <div class="panel-heading">Список компаний</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Название компании</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each company in model}}
+        <tr class='tableLine'>
+          <td {{action "goToLink" company}}>{{company.id}}</td>
+          <td {{action "goToLink" company}}>{{company.title}}</td>
+          <td class='deleteButton'><i class='glyphicon glyphicon-remove-circle' {{action "delete" company}}></i></td>
+        </tr>
+        {{/each}}
       </tbody>
-</table>
+    </table>
+  </div>
 </div>
 
 <div class row>

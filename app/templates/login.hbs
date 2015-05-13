@@ -3,18 +3,18 @@
 	</div>
 	<div class="col-md-4">	
 	<div class="panel panel-default">
-  <div class="panel-heading">Log here</div>
+  <div class="panel-heading">Выполните вход</div>
   <div class="panel-body">
 	<form class="form-vertical">		
     	<div class="form-group1">
     	<div class="col-sm-0">
-   			{{input type="text" class="identification" value=identification placeholder="Login"}}
+   			{{input type="text" class="identification" value=identification placeholder=" Имя пользователя"}}
     	</div>
     	</div>
 
     	<div class="form-group">
     	<div class="col-sm-0 passField">
-    	{{input type="password" class="password" value=password placeholder="Password"}}
+    	{{input type="password" class="password" value=password placeholder="  Пароль"}}
     	</div>
 		</div>
 		<button type="submit" class="btn btn-default" {{action 'authenticate'}}>Log in</button>
