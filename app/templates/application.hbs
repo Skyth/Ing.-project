@@ -15,6 +15,7 @@
 		<ul class="nav navbar-nav">
     		 
     		<li>{{#link-to 'companies' }}Companies{{/link-to}}</li>
+
     		<li>{{#link-to 'users'}}Users{{/link-to}}</li>
         <li>{{#if session.isAuthenticated}}
             <a {{ action 'invalidateSession' }}>Sign out</a>
