@@ -34,6 +34,16 @@ export default Ember.Controller.extend({
 		edit_cancel: function () {
 			this.transitionToRoute('companies.show', this.get('model'));
 			return false;
+		},
+		add_to_list: function() {
+			var new_one = 15;
+			debugger
+			var list = this.model.get('users');
+			list.push(new_one);
+			var _this = this;
+				this.get('model').save().then(function(company){
+					_this.transitionToRoute('companies.show',company);
+				});
 		}
 	}
 
