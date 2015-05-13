@@ -11,7 +11,7 @@ export default Router.map(function () {
   this.resource('companies', function () {
     this.route('show', { path: ':company_id' }, function (){
         this.resource('products', function (){
-          this.route ('show', {path: 'product_id' }, function (){})
+          this.route ('show', {path: 'product_id' }, function (){});
         });
     });
     this.route('new');

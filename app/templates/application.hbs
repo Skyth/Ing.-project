@@ -17,14 +17,25 @@
         <li>{{#link-to 'companies' }}{{ userName }}{{/link-to}}</li>
         {{#if isAdmin}}
     		<li>
-          {{#link-to 'users'}}Users{{/link-to}}</li>
+          {{#link-to 'users'}}Пользователи{{/link-to}}</li>
         {{/if}}
         <li>
-            <a {{ action 'invalidateSession' }}>Sign out</a>
+            <a class='navbar-right' {{ action 'invalidateSession' }}>Выйти</a>
           </li>
-          {{else}}<li>
-            {{#link-to 'login'}}Sign in{{/link-to}}</li>{{/if}}
+        {{/if}}
 		</ul>
+    <ul class="nav navbar-nav navbar-right">
+         {{#if session.isAuthenticated}}
+        <li>{{#link-to 'companies' }}{{ userName }}{{/link-to}}</li>
+        {{#if isAdmin}}
+        <li>
+          {{#link-to 'users'}}Пользователи{{/link-to}}</li>
+        {{/if}}
+        <li>
+            <a class='navbar-right' {{ action 'invalidateSession' }}>Выйти</a>
+          </li>
+        {{/if}}
+    </ul>
     </div>	
   </div>
 </nav>
