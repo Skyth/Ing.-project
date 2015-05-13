@@ -45,15 +45,15 @@ export default Ember.Controller.extend({
 				});
 		},
 		delete_from_list: function() {
-			debugger
 			var minus_one = this.model.get('minus');
 			var list = this.model.get('users');
 			var del = parseInt(minus_one,10);
-			var temp = $.inArray(del,list);
-			if (temp == -1)
+			var temp = Ember.$.inArray(del,list);
+			if (temp === -1)
 				{this.transitionToRoute('companies');}
-			else
+			else {
 				list.splice(temp,1);
+			}
 			var _this = this;
 			this.get('model').save().then(function(company){
 					_this.transitionToRoute('companies.show',company);

@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       this.transitionToRoute('products', company); 
     },
     confirm: function (company) {
-      this.set('temp', company)
+      this.set('temp', company);
       this.set('isConfirmVisible',true);
     },
     proceed: function () {
