@@ -34,6 +34,30 @@ export default Ember.Controller.extend({
 		edit_cancel: function () {
 			this.transitionToRoute('companies.show', this.get('model'));
 			return false;
+		},
+		add_to_list: function() {
+			var new_one = this.model.get('plus');
+			var list = this.model.get('users');
+			list.push(new_one);
+			var _this = this;
+				this.get('model').save().then(function(company){
+					_this.transitionToRoute('companies.show',company);
+				});
+		},
+		delete_from_list: function() {
+			debugger
+			var minus_one = this.model.get('minus');
+			var list = this.model.get('users');
+			var del = parseInt(minus_one,10);
+			var temp = $.inArray(del,list);
+			if (temp == -1)
+				{this.transitionToRoute('companies');}
+			else
+				list.splice(temp,1);
+			var _this = this;
+			this.get('model').save().then(function(company){
+					_this.transitionToRoute('companies.show',company);
+			});
 		}
 	}
 

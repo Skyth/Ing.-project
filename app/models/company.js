@@ -3,7 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend ( {
 	title: DS.attr('string'),
 	products: DS.hasMany('product', {async: true}),
-	users: DS.hasMany('user'),
+	//users: DS.attr('user',{async: true}),
+	users: DS.attr(),
 	address: DS.attr('string'),
 	ogrn: DS.attr('string'),
 	kpp: DS.attr('string'),

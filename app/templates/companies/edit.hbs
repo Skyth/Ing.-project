@@ -54,7 +54,7 @@
     	</div>
 	</div>
 </form>	
-<div class="btn-group-gorizontal" role="group" aria-label="...">
+<div class="btn-group-gorizontal" role="group" aria-label="..." display="inline">
     <div class="col-sm-offset-4 col-sm-10">
       <button type="submit" class="btn btn-default" {{action 'edit_save'}}>Submit</button>
     </div>
@@ -62,5 +62,22 @@
       <button type="cancel" class="btn btn-default" {{action 'edit_cancel'}}>Cancel</button>
     </div> 
 </div>	
-	
+<div class="form-group">
+		<label for="exampleInputName2">Add user with this id to company</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.plus placeholder="123"}}
+    	</div>
+</div>
+     <div class="col-sm-offset-4 col-sm-10">
+      <button type="cancel" class="btn btn-default" {{action 'add_to_list'}}>Add it</button>
+    </div> 
+<div class="form-group">
+		<label for="exampleInputName2">Delete user with this id to company</label>
+		<div class="col-sm-6">
+    	{{input type="text" class="form-control" value=model.minus placeholder="123"}}
+    	</div>
+</div>
+     <div class="col-sm-offset-4 col-sm-10">
+      <button type="cancel" class="btn btn-default" {{action 'delete_from_list'}}>Delete</button>
+    </div>    	
 {{outlet}}
