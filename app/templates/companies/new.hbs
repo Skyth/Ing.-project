@@ -1,63 +1,40 @@
-<form class="form-vertical">
-	<div class="form-group">
-		<label for="exampleInputName2">Title</label>
-    	<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.title placeholder="123"}}
-    	</div>
+<div class='col-sm-10'>
+	<div class='panel panel-default'>
+		<div class='panel-body'>
+			<form class="form-vertical">
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.title placeholder="Название"}}
+				</div>
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.address placeholder="Адрес"}}
+				</div>
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.ogrn placeholder="ОГРН"}}
+				</div>
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.inn placeholder="ИНН"}}
+				</div>
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.kpp placeholder="КПП"}}
+				</div>	
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.paymentAccount placeholder="Рассчетный счет"}}
+				</div>
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.correctionalAccount placeholder="Корреспондентский счет"}}
+				</div>	
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.bankName placeholder="Название банка"}}
+				</div>	
+				<div class="form-group">
+					{{input type="text" class="form-control" value=model.bankBik placeholder="БИК"}}
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-4 col-sm-10">
+						<button type="submit" class="btn btn-default" {{action 'add_new'}}>Добавить компанию</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
-	<div class="form-group">
-		<label for="exampleInputName2">Address</label>
-    	<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.address placeholder="123"}}
-    	</div>
-	</div>
-	<div class="form-group">
-		<label for="exampleInputName2">Ogrn</label>
-    	<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.ogrn placeholder="123"}}
-   		</div>
-	</div>
-	<div class="form-group">
-		<label for="exampleInputName2">Inn</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.inn placeholder="123"}}
-    	</div>
-	</div>
-	<div class="form-group">
-		<label for="exampleInputName2">Kpp</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.kpp placeholder="123"}}
-    	</div>
-	</div>	
-	<div class="form-group">
-		<label for="exampleInputName2">Payment account</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.paymentAccount placeholder="123"}}
-    	</div>
-	</div>
-	<div class="form-group">
-		<label for="exampleInputName2">Correctional account</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.correctionalAccount placeholder="123"}}
-    	</div>
-	</div>	
-	<div class="form-group">
-		<label for="exampleInputName2">Bank name</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.bankName placeholder="123"}}
-    	</div>
-	</div>	
-	<div class="form-group">
-		<label for="exampleInputName2">Bank bik</label>
-		<div class="col-sm-6">
-    	{{input type="text" class="form-control" value=model.bankBik placeholder="123"}}
-    	</div>
-	</div>
-	<div class="form-group">
-    <div class="col-sm-offset-4 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'add_new'}}>Add new company</button>
-    </div>
-  </div>				
-</form>	
-
-{{outlet}}
+</div>

@@ -1,0 +1,27 @@
+<div class='mid'>
+	<h4>{{name}}</h4>
+	<h6>{{mail}}</h6>
+	<div class="panel panel-default">
+		<div class="panel-heading">Список товаров</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Id</th>
+					<th>Название товара</th>
+					<th>Производитель</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each product in products}}
+				<tr class='tableLine'>
+					<td class='img' {{action "goToLink" product}}><img class='img' src={{product.image}}></td>
+					<td {{action "goToLink" product}}> {{product.id}}</td>
+					<td {{action "goToLink" product}}>{{product.title}}</td>
+					<td {{action "goToLink" product}}>{{product.manufacturer}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>

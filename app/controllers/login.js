@@ -12,11 +12,12 @@ export default Ember.Controller.extend(LoginControllerMixin,{
 	),
 	actions: {
 		authenticate: function (){
+			Ember.$.cookie("csrftoken", null, { path: '/' });
+			Ember.$.cookie("sessionid", null, { path: '/' });
 			if (this.get('isValid')) {
 				var credentials = this.getProperties('identification', 'password');
-	            this.get('session').authenticate('authenticator:custom', credentials);
-	            //this.transitionToRoute('companies');
-	        }
+				this.get('session').authenticate('authenticator:custom', credentials);
+			}
 		}
 	}
 });

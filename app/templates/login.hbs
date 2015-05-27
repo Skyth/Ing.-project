@@ -1,26 +1,23 @@
-<div class="row">
-	<div class="col-md-4">
-	</div>
-	<div class="col-md-4">	
-	<div class="panel panel-default">
-  <div class="panel-heading">Выполните вход</div>
-  <div class="panel-body">
-	<form class="form-vertical">		
-    	<div class="form-group1">
-    	<div class="col-sm-0">
-   			{{input type="text" class="identification" value=identification placeholder=" Имя пользователя"}}
-    	</div>
-    	</div>
-
-    	<div class="form-group">
-    	<div class="col-sm-0 passField">
-    	{{input type="password" class="password" value=password placeholder="  Пароль"}}
-    	</div>
+<div class= "loginOuter">
+	<div class= "loginMiddle">
+		<div class="panel panel-default loginPanel">
+			<div class="panel-heading">Выполните вход</div>
+			<div class="panel-body">
+				<form class="form-vertical">		
+					<div class="form-group1">
+						<div class="col-sm-0">
+							{{input id='identification' type="text" class="identification form-control" value=identification placeholder="Имя пользователя"}}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-0 passField">
+							{{input id='password' type="password" class="password form-control" value=password placeholder="Пароль"}}
+						</div>
+					</div>
+					<button type="submit" class="btn btn-default" {{action 'authenticate'}}>Вход</button>
+				</form>
+			</div>
 		</div>
-		<button type="submit" class="btn btn-default" {{action 'authenticate'}}>Вход</button>
-	</form>
 	</div>
-	</div>
-</div>
 </div>
 {{outlet}}

@@ -22,8 +22,22 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
     authorizer: 'authorizer:custom',
     crossOriginWhitelist: ['http://admin.ingida.ru'],
-     routeAfterAuthentication: '/companies'
+    routeAfterAuthentication: '/companies'
+    // tokenPropertyName: 'token',
+    // authorizationPrefix: 'Token ',
+    // authorizationHeaderName: 'Authorization'
   };
+
+  // ENV['simple-auth-token'] = {
+  //   serverTokenEndpoint: '/api-token-auth/',
+  //   identificationField: 'username',
+  //   passwordField: 'password',
+  //   tokenPropertyName: 'token',
+  //   authorizationPrefix: 'Token ',
+  //   authorizationHeaderName: 'Authorization',
+  //   headers: {
+  //   },
+  // };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

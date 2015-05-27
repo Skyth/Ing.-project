@@ -1,34 +1,41 @@
-<div class="col-sm-10">	
-	<table class="table table-bordered">
-		<thead>
-			<th>Id</th>
-			<th>Username</th>
-			<th>Email</th>
-			<th>Delete</th>
-			<th>Edit</th>
-			<th>Cancel</th>
-		</thead>
-		<tbody>
-			{{#each user in model}}
-			<tr>
-				<td>{{user.id}}</td>
-				<td> 
-					{{#inplace-edit value=user.username}}
-    					{{input value=user.username type="text"}}
-  					{{/inplace-edit}}
-  				</td>
-				<td>
-					{{#inplace-edit value=user.email}}
-    					{{input value=user.email type="email"}}
-  					{{/inplace-edit}}
-				</td>
-				<td><a href="#" {{action "delete" user}}>Delete</a></td>
-				<td><a href="#" {{action "save_edit" user}}>Save</a></td>
-				<td><a href="#" {{action "cancel_edit" user}}>Cancel</a></td>	
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+<div class='panel panel-default mid'>
+	<div class='panel-heading'>
+		<span>Список пользователей</span>
+		<div class="btn-group pull-right">
+			{{#link-to 'users.new'}}<button class="btn btn-default" type="submit">Добавить пользователя</button>{{/link-to}}
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class='panel-body'>
+		<table class="table">
+			<thead>
+				<th>Id</th>
+				<th>Имя пользователя</th>
+				<th>Email</th>
+				<th>Edit</th>
+				<th>Cancel</th>
+				<th></th>
+			</thead>
+			<tbody>
+				{{#each user in model}}
+				<tr class='tableLine'>
+					<td>{{user.id}}</td>
+					<td> 
+						{{#inplace-edit value=user.username}}
+							{{input value=user.username type="text"}}
+						{{/inplace-edit}}
+					</td>
+					<td>
+						{{#inplace-edit value=user.email}}
+							{{input value=user.email type="email"}}
+						{{/inplace-edit}}
+					</td>
+					<td><a href="#" {{action "save_edit" user}}>Save</a></td>
+					<td><a href="#" {{action "cancel_edit" user}}>Cancel</a></td>
+					<td><i {{action "delete" user}} class='glyphicon glyphicon-trash deleteButton'></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 </div>
-{{#link-to 'users.new'}}<button class="btn btn-default" type="submit">Add user</button>{{/link-to}}			
-{{outlet}}

@@ -7,10 +7,67 @@
 }
 
 .deleteButton {
-  text-align: center;
-  font-size: 16px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
 }
 
 .modal-backdrop.fade.in {
 	z-index: 0;
+}
+
+.loginOuter {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 70%;
+}
+
+.loginMiddle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.loginPanel {
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+}
+
+.outer {
+	margin-left: auto;
+	margin-right: auto; 
+	width: 75%;
+}
+
+.img {
+	width:	75px;
+	height: 75px;  
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+.out {
+	display: table;
+	position: absolute;
+	height: 70%;
+	width: 70%;
+}
+
+.mid {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list {
+	width: 80%;
+	float: right;
+}
+
+.image {
+	max-width: 175px;
+	max-height: 175px;
 }

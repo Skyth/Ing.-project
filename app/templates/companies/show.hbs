@@ -1,55 +1,51 @@
-<div class="company">
-	
-</div>
-<div class="col-md-4">
-</div>	
-<div class="col-sm-10">
-<table class="table table-bordered">
-	<thead>
-		<th>Field</th>
-		<th>Description</th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Title</td>
-			<td>{{model.title}}</td>	
-		</tr>	
-		<tr>
-			<td>Address</td>
-			<td>{{model.address}}</td>
-		</tr>
-		<tr>
-			<td>Ogrn</td>
-			<td>{{model.ogrn}}</td>
-		</tr>
-		<tr>
-			<td>Inn</td>
-			<td>{{model.inn}}</td>
-		</tr>
-		<tr>
-			<td>Kpp</td>
-			<td>{{model.kpp}}</td>
-		</tr>
-		<tr>
-			<td>Payment account</td>
-			<td>{{model.paymentAccount}}</td>
-		</tr>
-		<tr>
-			<td>Correctional account</td>
-			<td>{{model.correctionalAccount}}</td>
-		</tr>
-		<tr>
-			<td>Bank name</td>
-			<td>{{model.bankName}}</td>
-		</tr>
-		<tr>
-			<td>Bank bik</td>
-			<td>{{model.bankBik}}</td>
-		</tr>				
-	</tbody>
-</table>	
-</div>
-{{#link-to 'companies.edit' model}}<button class="btn btn-default" type="submit">Edit</button>{{/link-to}}
-<div class="products-container">	
-{{outlet}}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span>Информация о компании</span>
+		<div class="btn-group pull-right">
+			{{#link-to 'companies.edit' model}}<a href="#" id='editButton' class="btn btn-default btn-sm">Редактировать</a>{{/link-to}}
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="panel-body">
+		<table class="table">
+			<tbody>
+				<tr>
+					<td>Название</td>
+					<td>{{model.title}}</td>	
+				</tr>	
+				<tr>
+					<td>Адрес</td>
+					<td>{{model.address}}</td>
+				</tr>
+				<tr>
+					<td><abbr title="Основной государственный регистрационный номер">ОГРН</abbr></td>
+					<td>{{model.ogrn}}</td>
+				</tr>
+				<tr>
+					<td><abbr title="Индивидуальный номер налогоплательщика">ИНН</abbr></td>
+					<td>{{model.inn}}</td>
+				</tr>
+				<tr>
+					<td><abbr title="Код причины постановки на учет">КПП</abbr></td>
+					<td>{{model.kpp}}</td>
+				</tr>
+				<tr>
+					<td>Рассчетный счет</td>
+					<td>{{model.paymentAccount}}</td>
+				</tr>
+				<tr>
+					<td>Корреспондентский счет</td>
+					<td>{{model.correctionalAccount}}</td>
+				</tr>
+				<tr>
+					<td>Название банка</td>
+					<td>{{model.bankName}}</td>
+				</tr>
+				<tr>
+					<td><abbr title="Банковский идентификационный код">БИК</abbr></td>
+					<td>{{model.bankBik}}</td>
+				</tr>				
+			</tbody>
+		</table>	
+	</div>
 </div>

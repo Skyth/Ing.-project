@@ -1,35 +1,33 @@
 {{#if isConfirmVisible}}
-  {{confirm-modal isVisible=isConfirmVisible 
-    confirmationMsg="Вы уверены, что хотите удалить компанию?" title="Подтверждение" 
-    confirmType="delete" proceed="proceed"}}
+	{{confirm-modal isVisible=isConfirmVisible 
+		confirmationMsg="Вы уверены, что хотите удалить компанию?" title="Подтверждение" 
+		confirmType="delete" proceed="proceed"}}
 {{/if}}
 
-<div class="col-sm-10">
-  <div class="panel panel-default">
-    <div class="panel-heading">Список компаний</div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Название компании</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each company in model}}
-        <tr class='tableLine'>
-          <td {{action "goToLink" company}}>{{company.id}}</td>
-          <td {{action "goToLink" company}}>{{company.title}}</td>
-          <td class='deleteButton'><i class='glyphicon glyphicon-remove-circle' {{action "confirm" company}}></i></td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class row>
-	<div class="btn-group" role="group" aria-label="...">
-  		{{#link-to 'companies.new'}}<button type="button" class="btn btn-default">Add new company</button>{{/link-to}}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<span>Список компаний</span>
+		<div class="btn-group pull-right">
+			{{#link-to 'companies.new'}}<a href="#" class="btn btn-default btn-sm">Добавить компанию</a>{{/link-to}}
+		</div>
+		<div class="clearfix"></div>
 	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Название компании</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each company in model}}
+			<tr class='tableLine'>
+				<td {{action "goToLink" company}}>{{company.id}}</td>
+				<td {{action "goToLink" company}}>{{company.title}}</td>
+				<td><i {{action "confirm" company}} class='glyphicon glyphicon-remove-circle deleteButton'></i></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
 </div>

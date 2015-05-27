@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+	users: Ember.computed.map('model.users', item => item),
 	isValid: Ember.computed(
 		'model.title',
 		'model.address',
@@ -29,7 +30,7 @@ export default Ember.Controller.extend({
 					_this.transitionToRoute('companies.show',company);
 				});
 			}
-		return false;	
+			return false;	
 		},
 		edit_cancel: function () {
 			this.transitionToRoute('companies.show', this.get('model'));
@@ -40,9 +41,9 @@ export default Ember.Controller.extend({
 			var list = this.model.get('users');
 			list.push(new_one);
 			var _this = this;
-				this.get('model').save().then(function(company){
-					_this.transitionToRoute('companies.show',company);
-				});
+			this.get('model').save().then(function(company){
+				_this.transitionToRoute('companies.show',company);
+			});
 		},
 		delete_from_list: function() {
 			var minus_one = this.model.get('minus');

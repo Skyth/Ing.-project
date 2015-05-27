@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	//company: DS.attr(),
+	consignments: DS.hasMany('consignment', {async: true}),
 	title: DS.attr('string'),
   	manufacturer: DS.attr('string'),
   	form_factor: DS.attr('string'),

@@ -1,9 +1,9 @@
 {{#if isEditing}}
 	<form {{action "toggleEditing" on="submit"}}>
-  		{{yield}}
+		{{yield}}
 	</form>
 {{else}}
 	<span {{action "toggleEditing"}}>
-  		{{value}}
+		{{value}}
 	</span>
 {{/if}}

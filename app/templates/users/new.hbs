@@ -1,31 +1,22 @@
-<div class="row">
-	<div class="col-md-4">
-	</div>
-	<div class="col-md-4">	
-	<div class="panel panel-default">
-  <div class="panel-heading">New user</div>
-  <div class="panel-body">
-	<form class="form-vertical">		
-    	<div class="form-group1">
-    	<div class="col-sm-0">
-   			{{input type="text" class="username" value=username placeholder="name"}}
-    	</div>
-    	</div>
-      <div class="form-group2">
-      <div class="col-sm-0">
-        {{input type="text" class="email" value=email placeholder="email"}}
-      </div>
-      </div>
-    	<div class="form-group">
-    	<div class="col-sm-0 passField">
-    	{{input type="password" class="password" value=password placeholder="Password"}}
-    	</div>
+<div class="out">
+	<div class= "loginMiddle">
+		<div class="panel panel-default loginPanel">
+			<div class="panel-heading">Новый пользователь</div>
+			<div class="panel-body">
+				<form class="form-vertical">		
+					<div class="form-group">
+						{{input type="text" class="username form-control" value=username placeholder="Имя"}}
+					</div>
+					<div class="form-group">
+						{{input type="text" class="email form-control" value=email placeholder="Email"}}
+					</div>
+					<div class="form-group">
+						{{input type="password" class="password form-control" value=password placeholder="Пароль"}}
+					</div>
+					<button type="submit" class="btn btn-default" {{action 'add_user'}}>Добавить</button>
+					<button type="submit" class="btn btn-default" {{action 'cancel'}}>Отменить</button>
+				</form>
+			</div>
 		</div>
-		<button type="submit" class="btn btn-default" {{action 'add_user'}}>Add new user</button>
-    <button type="submit" class="btn btn-default" {{action 'cancel'}}>Cancel</button>
-	</form>
-
 	</div>
-	</div>
-</div>
 </div>

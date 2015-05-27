@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Поставки</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Коды</th>
+				<th>XLSX</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each consignment in model}}
+			<tr class='tableLine'>
+				<td>{{consignment.id}}</td>
+				<td><a href={{consignment.code_archive}} {{action 'download' consignment.code_archive 'zip'}}>Скачать</a></td>
+				<td><a href={{consignment.xlsx_name}} {{action 'download' consignment.xlsx_name 'xlsx'}}>Скачать</a></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
